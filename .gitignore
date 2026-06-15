@@ -8,13 +8,10 @@ dist/
 data/
 *.db
 *.json.bak
-打包/
-message_server/messages.json
-*.exe
-*.zip
-message_server/message_admin.html
 .idea/
 项目说明.txt
+
+# === 源码排除（关键！不上传源码）===
 main.py
 core/forest.py
 core/sound.py
@@ -25,6 +22,10 @@ ui/message_tab.py
 ui/mini_timer.py
 ui/stats_tab.py
 ui/timer_tab.py
+message_server/message_server.py
+message_server/01_compile_message_server_pyd.py
+
+# === build 中间文件排除 ===
 build/FocusForest/
 build/FocusForestMessageServer/
 message_server/build/compiled/build/
@@ -32,3 +33,17 @@ message_server/build/compiled/*.c
 message_server/build/compiled/*.log
 message_server/build/compiled/*.html
 message_server/build/compiled/message_server.py
+
+# === 打包工具目录排除 ===
+打包/compile/
+打包/package/
+打包/release/
+打包/*.md
+打包/*.bat
+打包/*.ps1
+
+# === 其他排除 ===
+message_server/messages.json
+message_server/message_admin.html
+*.exe
+*.zip
