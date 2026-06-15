@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocusForest 使用手册</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.8;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #161b22;
+            border-radius: 12px;
+            padding: 40px;
+            border: 1px solid #30363d;
+        }
+        h1 {
+            text-align: center;
+            color: #50fa7b;
+            font-size: 2em;
+            margin-bottom: 8px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #8b949e;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        h2 {
+            color: #58a6ff;
+            font-size: 1.5em;
+            margin: 30px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #30363d;
+        }
+        h3 {
+            color: #79c0ff;
+            font-size: 1.2em;
+            margin: 20px 0 10px;
+        }
+        p { margin: 10px 0; }
+        .step-box {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        .step-num {
+            display: inline-block;
+            background: #50fa7b;
+            color: #0d1117;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+        .feature-card {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        .feature-card .icon { font-size: 2em; margin-bottom: 8px; }
+        .feature-card .title { color: #50fa7b; font-weight: bold; margin-bottom: 5px; }
+        .shortcut-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        .shortcut-table th, .shortcut-table td {
+            border: 1px solid #30363d;
+            padding: 10px 15px;
+            text-align: left;
+        }
+        .shortcut-table th {
+            background: #0d1117;
+            color: #58a6ff;
+        }
+        .shortcut-table tr:hover { background: #1c2128; }
+        kbd {
+            background: #30363d;
+            border: 1px solid #484f58;
+            border-radius: 4px;
+            padding: 2px 8px;
+            font-family: monospace;
+            color: #f0f6fc;
+        }
+        .tip {
+            background: #1c2128;
+            border-left: 3px solid #50fa7b;
+            padding: 12px 16px;
+            margin: 15px 0;
+            border-radius: 0 6px 6px 0;
+        }
+        .warning {
+            background: #1c2128;
+            border-left: 3px solid #f85149;
+            padding: 12px 16px;
+            margin: 15px 0;
+            border-radius: 0 6px 6px 0;
+        }
+        .faq-item {
+            margin: 12px 0;
+        }
+        .faq-q {
+            color: #58a6ff;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .faq-a {
+            color: #8b949e;
+            padding-left: 15px;
+        }
+        .nav {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-bottom: 25px;
+        }
+        .nav a {
+            color: #58a6ff;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        .nav a:hover { text-decoration: underline; }
+        .tree-legend {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .tree-item {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            padding: 10px;
+            text-align: center;
+        }
+        .tree-item .emoji { font-size: 1.8em; }
+        .tree-item .name { color: #50fa7b; font-size: 0.9em; margin-top: 4px; }
+        .tree-item .info { color: #8b949e; font-size: 0.8em; }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<h1>🌲 FocusForest 使用手册</h1>
+<p class="subtitle">让每一分钟专注，都长成一片森林</p>
+
+<div class="nav">
+    <a href="#install">安装</a>
+    <a href="#quickstart">快速上手</a>
+    <a href="#features">功能详解</a>
+    <a href="#forest">专注森林</a>
+    <a href="#shortcuts">快捷键</a>
+    <a href="#faq">常见问题</a>
+</div>
+
+<!-- ==================== 安装 ==================== -->
+<h2 id="install">📥 安装与启动</h2>
+
+<h3>下载</h3>
+<div class="step-box">
+    <p><span class="step-num">1</span>打开 GitHub，搜索 <strong style="color:#50fa7b;">FocusForest</strong></p>
+    <p><span class="step-num">2</span>进入仓库页面，点击右侧 <strong style="color:#50fa7b;">Releases</strong></p>
+    <p><span class="step-num">3</span>下载最新版本的 <strong style="color:#50fa7b;">FocusForest.zip</strong></p>
+    <p><span class="step-num">4</span>解压到任意目录</p>
+    <p><span class="step-num">5</span>双击 <strong style="color:#50fa7b;">FocusForest.exe</strong> 即可使用，无需安装</p>
+</div>
+
+<div class="tip">
+    💡 <strong>提示</strong>：FocusForest 是绿色软件，解压即用，不写注册表，不联网。如需卸载，直接删除文件夹即可。
+</div>
+
+<!-- ==================== 快速上手 ==================== -->
+<h2 id="quickstart">🚀 快速上手（3步开始专注）</h2>
+
+<div class="step-box">
+    <p><span class="step-num">1</span><strong>输入任务名</strong>：在专注页面顶部的输入框中，输入你接下来要专注的任务（如"写报告"、"背单词"）</p>
+    <p><span class="step-num">2</span><strong>点击开始</strong>：点击「开始专注」按钮，进入倒计时</p>
+    <p><span class="step-num">3</span><strong>保持专注</strong>：倒计时结束前不要操作手机或切换应用，专注完成后你将获得一棵树！</p>
+</div>
+
+<div class="tip">
+    💡 <strong>默认设置</strong>：专注时长 25 分钟，短休息 5 分钟，长休息 15 分钟。可在设置中自定义。
+</div>
+
+<!-- ==================== 功能详解 ==================== -->
+<h2 id="features">🎯 功能详解</h2>
+
+<div class="feature-grid">
+    <div class="feature-card">
+        <div class="icon">⏱️</div>
+        <div class="title">番茄专注</div>
+        <div>25分钟专注 + 5分钟休息，科学节奏保持高效</div>
+    </div>
+    <div class="feature-card">
+        <div class="icon">🌲</div>
+        <div class="title">专注森林</div>
+        <div>每次专注成功种一棵树，森林越来越茂盛</div>
+    </div>
+    <div class="feature-card">
+        <div class="icon">📊</div>
+        <div class="title">数据统计</div>
+        <div>专注时长、次数、趋势一目了然</div>
+    </div>
+    <div class="feature-card">
+        <div class="icon">🔔</div>
+        <div class="title">消息中心</div>
+        <div>接收通知和更新消息</div>
+    </div>
+    <div class="feature-card">
+        <div class="icon">📌</div>
+        <div class="title">悬浮窗</div>
+        <div>最小化后悬浮显示倒计时，不占屏幕</div>
+    </div>
+    <div class="feature-card">
+        <div class="icon">🌙</div>
+        <div class="title">暗色主题</div>
+        <div>护眼深色界面，长时间使用不疲劳</div>
+    </div>
+</div>
+
+<h3>专注计时器</h3>
+<p>专注页面的核心功能，支持以下操作：</p>
+<ul style="padding-left:20px; margin:10px 0;">
+    <li><strong>开始专注</strong>：点击按钮或按快捷键开始倒计时</li>
+    <li><strong>暂停/继续</strong>：临时暂停，继续后倒计时恢复</li>
+    <li><strong>停止</strong>：提前结束本次专注（不会种树）</li>
+    <li><strong>跳过休息</strong>：休息期间可跳过，直接进入下一轮专注</li>
+    <li><strong>任务名显示</strong>：专注期间顶部显示当前任务名，提醒自己保持专注</li>
+</ul>
+
+<h3>悬浮窗模式</h3>
+<p>专注期间点击「最小化」按钮，窗口缩小为悬浮小窗：</p>
+<ul style="padding-left:20px; margin:10px 0;">
+    <li>显示剩余时间和任务名</li>
+    <li>可拖动到屏幕任意位置</li>
+    <li>点击可还原完整窗口</li>
+    <li>专注结束自动提醒</li>
+</ul>
+
+<h3>消息中心</h3>
+<p>接收工具的通知和更新消息：</p>
+<ul style="padding-left:20px; margin:10px 0;">
+    <li><strong>全部</strong>：查看所有消息</li>
+    <li><strong>通知</strong>：系统通知类消息</li>
+    <li><strong>更新</strong>：版本更新消息</li>
+    <li>点击「👁 已读」切换显示/隐藏已读消息</li>
+    <li>点击「✓ 全部已读」一键标记所有消息为已读</li>
+</ul>
+
+<!-- ==================== 专注森林 ==================== -->
+<h2 id="forest">🌲 专注森林系统</h2>
+
+<h3>树木种类</h3>
+<p>每次专注成功，根据专注时长获得不同的植物：</p>
+
+<div class="tree-legend">
+    <div class="tree-item">
+        <div class="emoji">🌿</div>
+        <div class="name">小草</div>
+        <div class="info">短时间专注</div>
+    </div>
+    <div class="tree-item">
+        <div class="emoji">🪴</div>
+        <div class="name">灌木</div>
+        <div class="info">中等时间专注</div>
+    </div>
+    <div class="tree-item">
+        <div class="emoji">🌳</div>
+        <div class="name">小树</div>
+        <div class="info">较长时间专注</div>
+    </div>
+    <div class="tree-item">
+        <div class="emoji">🌲</div>
+        <div class="name">大树</div>
+        <div class="info">长时间专注</div>
+    </div>
+    <div class="tree-item">
+        <div class="emoji">🏔️</div>
+        <div class="name">巨树</div>
+        <div class="info">超长时间专注</div>
+    </div>
+</div>
+
+<h3>树木进化</h3>
+<p>多棵低级植物可以合并进化为更高级的植物：</p>
+
+<div class="step-box">
+    <p>🌿 🌿 🌿 → 🪴（3棵小草 → 1棵灌木）</p>
+    <p>🪴 🪴 → 🌳（2棵灌木 → 1棵小树）</p>
+    <p>🌳 🌳 → 🌲（2棵小树 → 1棵大树）</p>
+    <p>🌲 🌲 → 🏔️（2棵大树 → 1棵巨树）</p>
+</div>
+
+<div class="tip">
+    💡 <strong>进化进度</strong>：在森林页面可以看到当前进化进度，距离下一次进化还差几棵树。
+</div>
+
+<!-- ==================== 快捷键 ==================== -->
+<h2 id="shortcuts">⌨️ 快捷键</h2>
+
+<table class="shortcut-table">
+    <tr>
+        <th>快捷键</th>
+        <th>功能</th>
+        <th>说明</th>
+    </tr>
+    <tr>
+        <td><kbd>Space</kbd></td>
+        <td>开始/暂停专注</td>
+        <td>未开始时点击开始，专注中点击暂停</td>
+    </tr>
+    <tr>
+        <td><kbd>Esc</kbd></td>
+        <td>停止专注</td>
+        <td>提前结束当前专注</td>
+    </tr>
+    <tr>
+        <td><kbd>Ctrl</kbd>+<kbd>M</kbd></td>
+        <td>最小化/还原</td>
+        <td>切换悬浮窗和完整窗口</td>
+    </tr>
+</table>
+
+<!-- ==================== 常见问题 ==================== -->
+<h2 id="faq">❓ 常见问题</h2>
+
+<div class="faq-item">
+    <div class="faq-q">Q：Windows 提示"Windows 已保护你的电脑"，无法运行？</div>
+    <div class="faq-a">这是 Windows SmartScreen 的安全提示，因为 FocusForest 没有购买微软数字签名证书（证书费用高昂）。点击「更多信息」→「仍要运行」即可。FocusForest 完全开源安全，请放心使用。</div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-q">Q：杀毒软件报毒怎么办？</div>
+    <div class="faq-a">这是误报。FocusForest 使用 PyInstaller 打包，部分杀毒软件会误判。解决方法：将 FocusForest.exe 添加到杀毒软件的信任列表（白名单）即可。</div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-q">Q：专注被打断怎么办？</div>
+    <div class="faq-a">如果点击「停止」提前结束专注，本次不会种树。这是设计如此——鼓励你完整地完成每一次专注。如果只是临时需要查看信息，可以使用「暂停」功能，暂停后继续仍可种树。</div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-q">Q：数据会丢失吗？</div>
+    <div class="faq-a">专注数据保存在本地数据库中，不会因关闭程序而丢失。但请注意不要删除程序目录下的 data 文件夹。</div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-q">Q：专注时长可以自定义吗？</div>
+    <div class="faq-a">可以。在设置中可以自定义专注时长、短休息时长和长休息时长。</div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-q">Q：FocusForest 会联网吗？</div>
+    <div class="faq-a">不会。FocusForest 是纯本地应用，不联网、不上传数据、不收集任何个人信息。</div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-q">Q：如何更新到新版本？</div>
+    <div class="faq-a">关注 GitHub 仓库的 Releases 页面，下载最新版本替换旧文件即可。数据文件会自动兼容。</div>
+</div>
+
+<div class="warning">
+    ⚠️ <strong>重要</strong>：FocusForest 完全免费开源，仅通过 GitHub 发布。任何其他渠道的下载均非官方版本，请注意甄别。
+</div>
+
+<p style="text-align:center; color:#484f58; margin-top:30px; font-size:0.9em;">
+    FocusForest v1.0.0 | 开源免费 | GitHub: BC001-AI/FocusForest
+</p>
+
+</div>
+</body>
+</html>
