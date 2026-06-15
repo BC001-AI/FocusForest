@@ -1,3 +1,4 @@
+# === 通用排除 ===
 venv/
 __pycache__/
 *.pyc
@@ -11,12 +12,13 @@ __pycache__/
 *.json.bak
 .idea/
 
+# === 源码排除（一刀切，最安全）===
 *.py
 
+# === 目录排除 ===
 dist/
 data/
 build/
-
 message_server/
 requirements.txt
 打包/
