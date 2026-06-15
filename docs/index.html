@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocusForest - 专注森林 | 让每一分钟专注，都长成一片森林</title>
+    <meta name="description" content="FocusForest 是一款开源的专注力提升工具，结合番茄工作法与森林养成，让你的每一分钟专注都变成森林里的一棵树。">
+    <meta name="keywords" content="专注力,番茄工作法,森林,FocusForest,效率工具,自律,时间管理">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif; background: #0a0a1a; color: #e0e0e0; line-height: 1.8; }
+        a { color: #6ec6ff; text-decoration: none; }
+        a:hover { color: #90d5ff; }
+
+        .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 50%, #0a2a1a 100%); }
+        .hero h1 { font-size: 3.5em; margin-bottom: 10px; background: linear-gradient(135deg, #6ec6ff, #50fa7b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero .tagline { font-size: 1.3em; color: #aaa; margin-bottom: 40px; }
+        .hero .cta { display: inline-block; padding: 16px 48px; background: linear-gradient(135deg, #2d8cf0, #50fa7b); color: #fff; border-radius: 50px; font-size: 1.2em; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s; }
+        .hero .cta:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(80,250,123,0.3); color: #fff; }
+        .hero .sub { margin-top: 16px; font-size: 0.9em; color: #888; }
+
+        .section { max-width: 900px; margin: 0 auto; padding: 80px 20px; }
+        .section h2 { font-size: 2em; text-align: center; margin-bottom: 50px; color: #fff; }
+        .section h2 span { background: linear-gradient(135deg, #6ec6ff, #50fa7b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; }
+        .feature { background: #151530; border-radius: 16px; padding: 30px; border: 1px solid #2a2a4a; transition: transform 0.2s, border-color 0.2s; }
+        .feature:hover { transform: translateY(-4px); border-color: #50fa7b; }
+        .feature .icon { font-size: 2.5em; margin-bottom: 12px; }
+        .feature h3 { font-size: 1.2em; color: #fff; margin-bottom: 8px; }
+        .feature p { color: #999; font-size: 0.95em; }
+
+        .evolution { background: #151530; border-radius: 16px; padding: 40px; border: 1px solid #2a2a4a; margin-top: 40px; }
+        .evo-chain { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px; margin: 20px 0; font-size: 1.3em; }
+        .evo-arrow { color: #50fa7b; font-weight: bold; }
+
+        .achievements { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 30px; }
+        .achievement { background: #1a1a3a; border-radius: 12px; padding: 16px; text-align: center; border: 1px solid #2a2a4a; }
+        .achievement .badge { font-size: 1.8em; }
+        .achievement .name { font-size: 0.9em; color: #ccc; margin-top: 4px; }
+
+        .download-section { text-align: center; background: linear-gradient(135deg, #0a1a2a, #1a0a2a); border-radius: 20px; padding: 60px 30px; margin-top: 40px; border: 1px solid #2a2a4a; }
+        .download-section .steps { text-align: left; max-width: 500px; margin: 30px auto; }
+        .download-section .step { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; }
+        .download-section .step-num { background: #50fa7b; color: #0a0a1a; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
+        .download-section .step-text { color: #ccc; }
+        .download-section .faq { margin-top: 30px; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .download-section .faq h4 { color: #50fa7b; margin-bottom: 8px; }
+        .download-section .faq p { color: #999; font-size: 0.9em; margin-bottom: 16px; }
+
+        .footer { text-align: center; padding: 40px 20px; color: #555; font-size: 0.85em; border-top: 1px solid #1a1a3a; }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.2em; }
+            .hero .tagline { font-size: 1em; }
+            .section h2 { font-size: 1.5em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <h1>🌿 FocusForest</h1>
+    <p class="tagline">让每一分钟专注，都长成一片森林</p>
+    <a href="#download" class="cta">⬇ 免费下载</a>
+    <p class="sub">Windows 桌面应用 · 开源免费 · 无需注册</p>
+</div>
+
+<div class="section">
+    <h2>✨ <span>核心功能</span></h2>
+    <div class="features">
+        <div class="feature">
+            <div class="icon">⏱</div>
+            <h3>沉浸式番茄计时</h3>
+            <p>5/25/45/60分钟快速预设，输入任务名专注时显示，完成自动提醒+音效，随机激励语录</p>
+        </div>
+        <div class="feature">
+            <div class="icon">🌲</div>
+            <h3>专注森林·进化系统</h3>
+            <p>专注种树，小草进化灌木→小树→大树→巨树！实时显示进化进度，中途放弃=枯萎树</p>
+        </div>
+        <div class="feature">
+            <div class="icon">📊</div>
+            <h3>数据统计</h3>
+            <p>今日/累计专注时长、连续天数、周月趋势图、任务分类统计、14个成就徽章</p>
+        </div>
+        <div class="feature">
+            <div class="icon">📬</div>
+            <h3>消息中心</h3>
+            <p>接收通知与更新消息，一键标记已读，未读高亮，自动轮询新消息</p>
+        </div>
+        <div class="feature">
+            <div class="icon">💎</div>
+            <h3>悬浮迷你窗</h3>
+            <p>专注中最小化变桌面悬浮窗，不占屏幕随时看倒计时，悬浮窗也能开始/暂停</p>
+        </div>
+        <div class="feature">
+            <div class="icon">🌙</div>
+            <h3>深色主题</h3>
+            <p>护眼深色界面，自定义标题栏无边框沉浸感，森林背景随时间变化</p>
+        </div>
+    </div>
+
+    <div class="evolution">
+        <h3 style="text-align:center;color:#fff;margin-bottom:8px;">🌳 树木进化路线</h3>
+        <p style="text-align:center;color:#888;">你专注的每一分钟，都在让森林成长</p>
+        <div class="evo-chain">
+            <span>🌿 小草 ×3</span>
+            <span class="evo-arrow">→</span>
+            <span>🌳 灌木 ×2</span>
+            <span class="evo-arrow">→</span>
+            <span>🌲 小树 ×2</span>
+            <span class="evo-arrow">→</span>
+            <span>🏡 大树 ×2</span>
+            <span class="evo-arrow">→</span>
+            <span>🌍 巨树</span>
+        </div>
+    </div>
+
+    <div class="achievements">
+        <div class="achievement"><div class="badge">🌱</div><div class="name">初心萌芽</div></div>
+        <div class="achievement"><div class="badge">🔥</div><div class="name">三日连胜</div></div>
+        <div class="achievement"><div class="badge">⚡</div><div class="name">周周不断</div></div>
+        <div class="achievement"><div class="badge">🏆</div><div class="name">月度坚持</div></div>
+        <div class="achievement"><div class="badge">💎</div><div class="name">五十小时</div></div>
+        <div class="achievement"><div class="badge">👑</div><div class="name">百小时专注</div></div>
+        <div class="achievement"><div class="badge">🌍</div><div class="name">森林之王</div></div>
+    </div>
+</div>
+
+<div class="section" id="download">
+    <h2>⬇ <span>免费下载</span></h2>
+    <div class="download-section">
+        <h3 style="color:#fff;margin-bottom:8px;">下载 FocusForest</h3>
+        <p style="color:#888;">完全开源免费，仅通过 GitHub 发布</p>
+
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <div class="step-text">打开 GitHub，搜索 <strong style="color:#50fa7b;">FocusForest</strong></div>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <div class="step-text">进入仓库页面，点击右侧 <strong style="color:#50fa7b;">Releases</strong></div>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-text">下载最新版本的 <strong style="color:#50fa7b;">FocusForest.zip</strong></div>
+            </div>
+            <div class="step">
+                <div class="step-num">4</div>
+                <div class="step-text">解压后双击 <strong style="color:#50fa7b;">FocusForest.exe</strong> 即可使用</div>
+            </div>
+        </div>
+
+        <div class="faq">
+            <h4>❓ Windows 提示"已保护你的电脑"？</h4>
+            <p>这是 SmartScreen 对未签名应用的常规提示。点击「更多信息」→「仍要运行」即可。FocusForest 完全开源，代码可审查。</p>
+
+            <h4>❓ 杀毒软件报毒？</h4>
+            <p>PyInstaller 打包的程序可能被误报。FocusForest 是开源项目，源代码完全公开可审查，不包含任何恶意代码。可添加信任或从源码自行打包。</p>
+
+            <h4>❓ 需要安装 Python 吗？</h4>
+            <p>不需要。下载解压后直接运行 FocusForest.exe 即可，无需安装任何依赖。</p>
+        </div>
+
+        <a href="https://github.com/BC001-AI/FocusForest/releases" class="cta" style="margin-top:30px;display:inline-block;">前往 GitHub 下载 →</a>
+    </div>
+</div>
+
+<div class="footer">
+    <p>FocusForest © 2026 · 开源免费 · <a href="https://github.com/BC001-AI/FocusForest">GitHub</a></p>
+</div>
+
+</body>
+</html>
